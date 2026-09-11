@@ -19,9 +19,11 @@
   <header class="nav shell">
     <a class="wordmark" href="#top" aria-label="Harika Nannaka home">Harika Nannaka<span>.</span></a>
     <nav class="header-links" aria-label="Portfolio links">
-      <a href="https://www.linkedin.com/in/harikanannaka" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-      <a href="./Harika-Nannaka-Resume.pdf" download>Resume ↓</a>
-      <a class="email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nannakaharika22%40gmail.com" target="_blank" rel="noreferrer" aria-label="Compose an email to nannakaharika22@gmail.com in Gmail">Email ↗</a>
+      <a href="https://www.linkedin.com/in/harikanannaka" target="_blank" rel="noreferrer"><span class="nav-icon linkedin-icon" aria-hidden="true">in</span>LinkedIn ↗</a>
+      <a href="https://github.com/nannakaharika22-design" target="_blank" rel="noreferrer"><span class="nav-icon github-icon" aria-hidden="true">GH</span>GitHub ↗</a>
+      <a href="https://public.tableau.com/app/profile/harika.nannaka" target="_blank" rel="noreferrer"><span class="nav-icon tableau-icon" aria-hidden="true">✦</span>Tableau ↗</a>
+      <a href="./Harika-Nannaka-Resume.pdf" download><span class="nav-icon resume-icon" aria-hidden="true">▤</span>Resume ↓</a>
+      <a class="email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nannakaharika22%40gmail.com" target="_blank" rel="noreferrer" aria-label="Compose an email to nannakaharika22@gmail.com in Gmail"><span class="nav-icon email-icon" aria-hidden="true">✉</span>Email ↗</a>
     </nav>
   </header>
 
@@ -53,7 +55,7 @@
         </div>
       </section>
       <div class="hero-bottom">
-        <p>I’m Harika Nannaka. A <strong>Data Scientist</strong> and <strong>Business Analyst</strong> who turns complex datasets into useful models, clear stories, and practical automation.</p>
+        <p>I’m curious about why numbers behave the way they do, and stubborn enough to keep digging until the story becomes clear. I like building work that feels <strong>thoughtful, useful, and a little unexpected.</strong></p>
         <a class="round-link" href="#work" aria-label="Explore selected work"><span>Explore<br>work</span><b>↓</b></a>
       </div>
       <div class="orbit" aria-hidden="true"><span class="orbit-line"></span><span class="orbit-ball"></span></div>
@@ -63,31 +65,30 @@
       <div class="section-head"><p>01 / Selected work</p><p>Problem → evidence → decision</p></div>
 
       <article class="project feature" data-project="automation">
-        <div class="project-backdrop invoice-backdrop" aria-hidden="true"><div><span>INVOICE 0427</span><span>LINE ITEMS ✓</span><span>AUDIT 100%</span><span>ERRORS ↓</span><span>THROUGHPUT ↑</span></div></div>
+        <div class="project-backdrop invoice-backdrop" aria-hidden="true"><div><span>FILE INTAKE</span><span>GEMINI JSON</span><span>UPC TRANSFORM</span><span>SNOWFLAKE CHECK</span><span>EXCEL OUTPUT</span></div></div>
         <div class="project-copy">
-          <div class="project-meta"><span>CVS · Featured case study</span><span>Machine Learning · Finance</span></div>
-          <h2>Accounts Payable,<br>without the busywork.</h2>
-          <p>Built a scalable Machine Learning workflow that extracts receipt line item summaries and totals, transforming a fully manual process into an automated audit pipeline.</p>
+          <div class="project-meta"><span>CVS · Featured case study</span><span>Gemini API · Snowflake · Excel</span></div>
+          <h2>Invoices in.<br>Validated data out.</h2>
+          <p>Built an invoice processing workflow that uses the Google Gemini API to return structured JSON, transforms line item and UPC data, validates it against Snowflake, and generates analysis ready files.</p>
+          <div class="invoice-pipeline" aria-label="Invoice automation workflow">
+            <div><b>01</b><strong>File intake</strong><span>Detect and validate the uploaded file type</span></div>
+            <div><b>02</b><strong>Gemini extraction</strong><span>Parse invoice fields, line items, vendor data, and UPCs into JSON</span></div>
+            <div><b>03</b><strong>Transformation</strong><span>Create stable summaries and normalize UPC values</span></div>
+            <div><b>04</b><strong>Snowflake validation</strong><span>Check vendors, duplicates, dates, totals, and stored records</span></div>
+            <div><b>05</b><strong>Output generation</strong><span>Produce line item CSV, JSON, and Excel files</span></div>
+          </div>
           <ul class="project-points">
-            <li>Automated extraction of line item summaries and total amounts</li>
-            <li>Enabled the Accounts Payable team to audit 100% of invoices</li>
-            <li>Reduced manual data entry errors and increased throughput</li>
-            <li>Freed the finance team to focus on strategic analysis</li>
+            <li>Extracted invoice ID, vendor name, line items, UPC values, and totals</li>
+            <li>Removed a trailing zero from UPC values when needed to match the Snowflake format</li>
+            <li>Validated vendor numbers, duplicate invoices, invoice dates, and total amounts</li>
+            <li>Generated structured outputs for audit and downstream analysis</li>
           </ul>
           <div class="impact-row">
             <div><strong>100%</strong><span>Invoice audit coverage</span></div>
-            <div><strong>↓</strong><span>Manual entry errors</span></div>
-            <div><strong>↑</strong><span>Team throughput</span></div>
+            <div><strong>Fewer</strong><span>Manual entry errors</span></div>
+            <div><strong>Faster</strong><span>Invoice processing</span></div>
           </div>
           <button class="case-button" type="button" data-dialog="automation-dialog">Explore case study <span>↗</span></button>
-        </div>
-        <div class="receipt-viz" aria-hidden="true">
-          <div class="scan"></div>
-          <div class="receipt">
-            <span class="receipt-title">INVOICE_0427</span><i></i><i></i><i></i><i></i>
-            <div class="receipt-total"><span>TOTAL</span><b>$1,284.20</b></div>
-          </div>
-          <span class="tag t1">vendor ✓</span><span class="tag t2">line items ✓</span><span class="tag t3">total ✓</span>
         </div>
       </article>
 
@@ -128,23 +129,70 @@
         <article class="project compact-project interactive-card terp-project">
           <div class="sports-backdrop" aria-hidden="true"><div><span>BASKETBALL 78:74</span><span>SOCCER 2:1</span><span>BASEBALL 6:4</span><span>FOOTBALL 27:21</span><span>LACROSSE 12:9</span><span>BASKETBALL 78:74</span></div></div>
           <div class="project-meta"><span>UMD · Terp Tracker</span><span>MySQL · Tableau · Power BI</span></div>
-          <h3>900GB → Game Plan</h3>
-          <p>Extracted performance KPIs from 900GB of sports data and built decision ready reports for team planning.</p>
-          <ul class="project-points compact-points"><li>Built dashboards for performance trends</li><li>Mapped the analytics pipeline</li><li>Improved game planning by 15%</li></ul>
-          <button class="case-button card-button" type="button" data-dialog="terp-dialog">Explore project <span>↗</span></button>
+          <h3>Matchups under the microscope</h3>
+          <p>Queried Maryland softball results to compare opponent win ratios, away venue losses, player batting averages by location, and coach performance.</p>
+          <section class="terp-explorer" aria-labelledby="terp-explorer-title">
+            <div class="explorer-head terp-explorer-head">
+              <div><span class="viz-kicker">Explore the SQL results</span><h4 id="terp-explorer-title">Where did Maryland perform best?</h4></div>
+              <div class="terp-tabs" role="group" aria-label="Choose a Terp Tracker analysis">
+                <button class="active" type="button" data-terp-view="opponents">Opponent wins</button>
+                <button type="button" data-terp-view="venues">Away losses</button>
+              </div>
+            </div>
+            <div class="terp-chart" id="terpChart" aria-live="polite"></div>
+            <p class="terp-readout" id="terpReadout">Penn State led the opponent table with 10 Maryland wins across 20 matchups.</p>
+          </section>
+          <ul class="project-points compact-points"><li>Found 10 Maryland wins across 20 Penn State matchups</li><li>Identified the away and neutral venues with the most losses</li><li>Modeled matches, players, coaches, and venues in a relational schema</li></ul>
+          <div class="project-actions">
+            <button class="case-button card-button" type="button" data-dialog="terp-dialog">Explore project <span>↗</span></button>
+            <a class="case-button github-link" href="https://github.com/nannakaharika22-design/Terp-tracker" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a>
+          </div>
         </article>
 
         <article class="project compact-project music-project interactive-card">
-          <div class="project-backdrop music-backdrop" aria-hidden="true"><div><span>ENERGY</span><span>TEMPO</span><span>VALENCE</span><span>DANCEABILITY</span><span>5,000+ USERS</span></div></div>
+          <div class="project-backdrop music-backdrop" aria-hidden="true"><div><span>ENERGY</span><span>TEMPO</span><span>VALENCE</span><span>DANCEABILITY</span><span>KNN NEIGHBORS</span></div></div>
           <div class="spotify-lockup" aria-label="Spotify project">
             <svg viewBox="0 0 64 64" role="img" aria-label="Spotify logo"><circle cx="32" cy="32" r="32" fill="#1ED760"/><path d="M46.8 43.4c-1 1.5-2.8 1.9-4.3.9-9.8-6-22.1-7.3-36.6-4-1.7.4-3.4-.7-3.8-2.4-.4-1.7.7-3.4 2.4-3.8 16.2-3.7 30.2-2.2 41.4 4.7 1.5.9 1.9 2.8.9 4.6zm6.1-9.2c-1.2 1.8-3.6 2.4-5.4 1.2-11.2-6.9-28.3-8.9-41.5-4.9-2.1.6-4.3-.6-4.9-2.7-.6-2.1.6-4.3 2.7-4.9 15.1-4.6 34.3-2.3 47.9 6 1.8 1.1 2.4 3.5 1.2 5.3zm.5-9.6C40 16.6 17.8 15.9 5 19.7c-2.5.7-5.1-.7-5.8-3.1-.7-2.5.7-5.1 3.1-5.8 14.8-4.4 39.8-3.5 55.4 5.8 2.2 1.3 2.9 4.2 1.6 6.4-1.3 2.2-4.2 2.9-5.9 1.6z" fill="#0b0d0c" transform="translate(3 8) scale(.86)"/></svg>
             <span>Spotify data project</span>
           </div>
           <div class="project-meta"><span>UMD · Music Recommender</span><span>Python · Scikit learn</span></div>
-          <h3>Made for 5,000+</h3>
-          <p>Created a personalized music recommendation engine for more than 5,000 users using Spotify data.</p>
-          <ul class="project-points compact-points"><li>Cleaned and scaled listener data</li><li>Engineered recommendation features</li><li>Improved accuracy by 20%</li></ul>
-          <button class="case-button card-button" type="button" data-dialog="music-dialog">Explore project <span>↗</span></button>
+          <h3>Context meets KNN</h3>
+          <p>Designed a music recommender that combines Spotify audio similarity with mood, weather, and time of day.</p>
+          <section class="music-explorer" aria-labelledby="music-explorer-title">
+            <div class="explorer-head">
+              <div><span class="viz-kicker">Try the model logic</span><h4 id="music-explorer-title">Build a listening profile</h4></div>
+              <output id="musicMatch" aria-live="polite"><strong>Bright commute</strong><span>closest context profile</span></output>
+            </div>
+            <div class="music-controls">
+              <label>Energy <output id="energyValue">72</output><input id="energyRange" type="range" min="0" max="100" value="72"></label>
+              <label>Valence <output id="valenceValue">68</output><input id="valenceRange" type="range" min="0" max="100" value="68"></label>
+              <label>Danceability <output id="danceValue">64</output><input id="danceRange" type="range" min="0" max="100" value="64"></label>
+              <label>Tempo <output id="tempoValue">58</output><input id="tempoRange" type="range" min="0" max="100" value="58"></label>
+            </div>
+            <div class="knn-neighbors" id="knnNeighbors" aria-label="Nearest context profiles"></div>
+            <p class="viz-note">The demo mirrors the project’s normalized feature and nearest neighbor logic. It does not call Spotify or play audio.</p>
+          </section>
+          <ul class="project-points compact-points"><li>Cleaned and normalized Spotify audio features</li><li>Built rule based context filters</li><li>Used KNN for explainable track similarity</li></ul>
+          <div class="project-actions">
+            <button class="case-button card-button" type="button" data-dialog="music-dialog">Explore project <span>↗</span></button>
+            <a class="case-button github-link" href="https://github.com/nannakaharika22-design/Music-recommendation-system" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project compact-project interactive-card tableau-project">
+          <div class="project-backdrop tableau-backdrop" aria-hidden="true"><div><span>GDP</span><span>EMPLOYMENT</span><span>INTERNET ACCESS</span><span>LIFE EXPECTANCY</span><span>R&amp;D</span><span>INDIA VS WORLD</span></div></div>
+          <div class="project-meta"><span>UMD · Data Narratives</span><span>Tableau · World Bank</span></div>
+          <h3>India, in context.</h3>
+          <p>Built an interactive Tableau story comparing India with world benchmarks across economic growth, access, employment, and quality of life.</p>
+          <ul class="project-points compact-points"><li>Packaged a working Hyper data extract</li><li>Connected a year parameter across multiple indicators</li><li>Designed India versus world dashboards and a guided story</li></ul>
+          <div class="tableau-embed">
+            <div class="embed-head"><span>Live Tableau dashboard</span><a href="https://public.tableau.com/views/BUDT758D_Final_Project_Data_Narratives_17395943578550/IndiasGrowthIndicators?:showVizHome=no" target="_blank" rel="noreferrer">Open full screen ↗</a></div>
+            <iframe title="India's Growth Indicators interactive Tableau dashboard" src="https://public.tableau.com/views/BUDT758D_Final_Project_Data_Narratives_17395943578550/IndiasGrowthIndicators?:showVizHome=no&amp;:embed=true&amp;:toolbar=yes" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="project-actions">
+            <button class="case-button card-button" type="button" data-dialog="india-dialog">Explore project <span>↗</span></button>
+            <a class="case-button github-link" href="https://github.com/nannakaharika22-design/India-growth-tableau" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a>
+          </div>
         </article>
       </div>
     </section>
@@ -161,9 +209,9 @@
       <div class="skill-groups">
         <section data-index="01"><h3>Data Science</h3><p>Python · R · Pandas · NumPy · Feature Engineering · Forecasting · Hypothesis Testing · Matplotlib · Seaborn</p></section>
         <section data-index="02"><h3>Machine Learning</h3><p>Scikit learn · TensorFlow · PyTorch · XGBoost · Random Forest · Logistic Regression · Lasso · Ridge · KNN</p></section>
-        <section data-index="03"><h3>Data Engineering</h3><p>SQL · MySQL · Spark · Hadoop · Data Cleaning · Data Transformation · Analytics Pipelines · CI/CD · MLOps</p></section>
+        <section data-index="03"><h3>Data Engineering</h3><p>SQL · MySQL · Snowflake · Spark · Hadoop · Data Cleaning · Data Transformation · JSON Pipelines · CI/CD · MLOps</p></section>
         <section data-index="04"><h3>Analytics and BI</h3><p>Power BI · Tableau · Excel · Power Query · Pivot Tables · Solver · KPI Design · Statistical Analysis</p></section>
-        <section data-index="05"><h3>Cloud and Platforms</h3><p>AWS · Google Cloud Platform · Microsoft Azure · SharePoint · Jira</p></section>
+        <section data-index="05"><h3>Cloud and Platforms</h3><p>AWS · Google Cloud Platform · Google Gemini API · Snowflake · Microsoft Azure · SharePoint · Jira</p></section>
         <section data-index="06"><h3>Business Analysis</h3><p>Business Requirements · Process Mapping · Data Storytelling · Stakeholder Collaboration · Strategic Recommendations · Lucidchart · Visio</p></section>
       </div>
     </section>
@@ -175,12 +223,14 @@
   <dialog id="automation-dialog">
     <button class="dialog-close" type="button" aria-label="Close case study">×</button>
     <p class="dialog-kicker">CVS / ACCOUNTS PAYABLE AUTOMATION</p>
-    <h2>From manual entry to complete invoice coverage.</h2>
+    <h2>Invoice data that survives validation.</h2>
     <div class="case-sections">
-      <section><span>01</span><div><h3>Business problem</h3><p>Receipt line items and totals required manual entry, limiting audit coverage and taking finance staff away from higher value analysis.</p></div></section>
-      <section><span>02</span><div><h3>Solution</h3><p>Developed a Machine Learning model that extracts line item summaries and total amounts from receipts and converts them into structured data.</p></div></section>
-      <section><span>03</span><div><h3>Operational impact</h3><p>Moved the workflow from 100% manual processing to an automated system, increased throughput, and reduced manual data entry errors.</p></div></section>
-      <section><span>04</span><div><h3>Business impact</h3><p>Enabled the Accounts Payable team to audit 100% of invoices while allowing the finance team to focus on strategic analysis.</p></div></section>
+      <section><span>01</span><div><h3>File intake</h3><p>The user uploads an invoice. The application detects the file and stops unsupported file types before extraction begins.</p></div></section>
+      <section><span>02</span><div><h3>Gemini document parsing</h3><p>The Google Gemini API extracts the invoice ID, vendor name, vendor number, line items, UPC values, dates, and totals. It returns the result as structured JSON.</p></div></section>
+      <section><span>03</span><div><h3>Data transformation</h3><p>The transformer separates line item entities, creates a stable summary, and prepares UPC values for Snowflake. When a UPC ends in zero, the workflow removes that final digit to match the stored format.</p></div></section>
+      <section><span>04</span><div><h3>Snowflake validation</h3><p>The integration confirms that the vendor number exists, checks for duplicate invoices, validates the invoice date range, compares total amounts, and stores the validated record.</p></div></section>
+      <section><span>05</span><div><h3>Generated outputs</h3><p>The final step produces line item CSV files, structured JSON, and Excel workbooks for audit and analysis.</p></div></section>
+      <section><span>06</span><div><h3>Operational result</h3><p>The Accounts Payable team can review every invoice with fewer manual entry errors and spend more time investigating exceptions.</p></div></section>
     </div>
   </dialog>
 
@@ -199,23 +249,37 @@
   <dialog id="terp-dialog">
     <button class="dialog-close" type="button" aria-label="Close project">×</button>
     <p class="dialog-kicker">UMD / TERP TRACKER</p>
-    <h2>Turning 900GB of sports data into a clearer game plan.</h2>
+    <h2>Home and away performance, queried from the same schema.</h2>
     <div class="case-sections">
-      <section><span>01</span><div><h3>Data scale</h3><p>Worked with 900GB of sports data and used MySQL to extract performance KPIs for strategic decision making.</p></div></section>
-      <section><span>02</span><div><h3>Visualization</h3><p>Built interactive Tableau and Power BI dashboards highlighting team performance trends.</p></div></section>
-      <section><span>03</span><div><h3>Pipeline design</h3><p>Created an analytics pipeline using Lucidchart and Excel to organize the flow from raw data to reporting.</p></div></section>
-      <section><span>04</span><div><h3>Outcome</h3><p>The completed analysis contributed to a 15% improvement in game planning.</p></div></section>
+      <section><span>01</span><div><h3>Management question</h3><p>The project examined how Maryland performed in home, away, and neutral games so team management could compare opponents, venues, players, and coaches.</p></div></section>
+      <section><span>02</span><div><h3>Database design</h3><p>Built a relational schema connecting matches, players, coaches, and venues. SQL queries calculated wins, losses, win ratios, and batting averages by location.</p></div></section>
+      <section><span>03</span><div><h3>Opponent result</h3><p>Penn State ranked first in the opponent analysis with 10 Maryland wins across 20 matchups. Iowa recorded six wins across ten matchups.</p></div></section>
+      <section><span>04</span><div><h3>Venue result</h3><p>The venue query isolated away and neutral locations where Maryland lost most often, led by Palm Springs and followed by Boca Raton.</p></div></section>
+      <section><span>05</span><div><h3>Decision use</h3><p>The analysis gives team management a structured way to compare location effects and review player or coach performance before planning future matchups.</p></div></section>
     </div>
   </dialog>
 
   <dialog id="music-dialog">
     <button class="dialog-close" type="button" aria-label="Close project">×</button>
     <p class="dialog-kicker">UMD / MUSIC RECOMMENDATION SYSTEM</p>
-    <h2>Personalized discovery for more than 5,000 listeners.</h2>
+    <h2>Recommendations shaped by sound and context.</h2>
     <div class="case-sections">
-      <section><span>01</span><div><h3>Product goal</h3><p>Created a music recommendation engine using Python, Scikit learn, and Spotify data for more than 5,000 users.</p></div></section>
-      <section><span>02</span><div><h3>Model preparation</h3><p>Cleaned, scaled, and engineered features to improve the quality of the recommendation inputs.</p></div></section>
-      <section><span>03</span><div><h3>Outcome</h3><p>Improved recommendation accuracy by 20% and used Matplotlib and Seaborn to communicate model performance.</p></div></section>
+      <section><span>01</span><div><h3>Product goal</h3><p>Tailored song suggestions to a listener’s preferences, mood, weather, and time of day using Spotify track data.</p></div></section>
+      <section><span>02</span><div><h3>Data preparation</h3><p>Filled missing values, removed unused fields, and normalized audio features including energy, loudness, valence, danceability, and tempo.</p></div></section>
+      <section><span>03</span><div><h3>Two recommendation paths</h3><p>Used context rules to filter eligible songs and K nearest neighbors to retrieve tracks with similar normalized audio characteristics.</p></div></section>
+      <section><span>04</span><div><h3>Model decision</h3><p>Selected KNN for its simplicity and lower memory requirements. The original presentation did not report a validated accuracy score, so the project makes no unsupported performance claim.</p></div></section>
+    </div>
+  </dialog>
+
+  <dialog id="india-dialog">
+    <button class="dialog-close" type="button" aria-label="Close project">×</button>
+    <p class="dialog-kicker">UMD / INDIA’S GROWTH INDICATORS</p>
+    <h2>Comparing growth with the conditions people experience.</h2>
+    <div class="case-sections">
+      <section><span>01</span><div><h3>Analytical scope</h3><p>Connected World Bank indicators covering GDP, inflation, employment, population, technology, essential services, poverty, and life expectancy.</p></div></section>
+      <section><span>02</span><div><h3>Tableau structure</h3><p>Built an interactive year parameter, calculated fields, multiple dashboards, and an India versus world comparison.</p></div></section>
+      <section><span>03</span><div><h3>Data delivery</h3><p>Packaged the workbook with its Hyper extract so reviewers can open the complete Tableau artifact and inspect the worksheets and story.</p></div></section>
+      <section><span>04</span><div><h3>Narrative choice</h3><p>Organized the analysis around economy and employment, exports and research spending, and quality of life instead of presenting disconnected charts.</p></div></section>
     </div>
   </dialog>
 

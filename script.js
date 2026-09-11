@@ -343,3 +343,79 @@ document.querySelectorAll('.outcome-bar').forEach(bar => {
   bar.addEventListener('click', selectOutcome);
   bar.addEventListener('focus', selectOutcome);
 });
+
+const musicProfiles = [
+  { name: 'Bright commute', values: [72, 68, 64, 58] },
+  { name: 'Deep focus', values: [34, 42, 26, 38] },
+  { name: 'Rainy evening', values: [28, 24, 32, 42] },
+  { name: 'Workout push', values: [92, 70, 78, 84] },
+  { name: 'Late night drive', values: [55, 38, 48, 66] }
+];
+
+const musicInputs = [
+  ['energyRange', 'energyValue'],
+  ['valenceRange', 'valenceValue'],
+  ['danceRange', 'danceValue'],
+  ['tempoRange', 'tempoValue']
+];
+
+const musicMatch = document.querySelector('#musicMatch');
+const knnNeighbors = document.querySelector('#knnNeighbors');
+
+function updateMusicExplorer() {
+  if (!musicMatch || !knnNeighbors) return;
+  const values = musicInputs.map(([inputId, outputId]) => {
+    const input = document.querySelector(`#${inputId}`);
+    document.querySelector(`#${outputId}`).textContent = input.value;
+    return Number(input.value);
+  });
+  const ranked = musicProfiles.map(profile => ({
+    ...profile,
+    distance: Math.sqrt(profile.values.reduce((sum, value, index) => sum + ((value - values[index]) ** 2), 0))
+  })).sort((a, b) => a.distance - b.distance);
+  musicMatch.querySelector('strong').textContent = ranked[0].name;
+  knnNeighbors.innerHTML = ranked.slice(0, 4).map((profile, index) => {
+    const match = Math.max(12, 72 - profile.distance * .65);
+    return `<div class="neighbor" style="--match:${match}px"><i></i><span>${index + 1}. ${profile.name}</span></div>`;
+  }).join('');
+}
+
+musicInputs.forEach(([inputId]) => document.querySelector(`#${inputId}`)?.addEventListener('input', updateMusicExplorer));
+updateMusicExplorer();
+
+const terpViews = {
+  opponents: {
+    rows: [['Penn State', 10], ['Michigan State', 7], ['Rutgers', 6], ['Indiana', 6], ['Iowa', 6]],
+    note: 'Penn State led the opponent table with 10 Maryland wins across 20 matchups.'
+  },
+  venues: {
+    rows: [['Palm Springs, CA', 11], ['Boca Raton, FL', 10], ['Columbus, OH', 9], ['Austin, TX', 9], ['Kissimmee, FL', 9]],
+    note: 'Palm Springs recorded the most Maryland losses among away and neutral venues.'
+  }
+};
+
+const terpChart = document.querySelector('#terpChart');
+const terpReadout = document.querySelector('#terpReadout');
+
+function renderTerpView(viewName) {
+  if (!terpChart || !terpReadout) return;
+  const view = terpViews[viewName];
+  const max = Math.max(...view.rows.map(([, value]) => value));
+  terpChart.innerHTML = view.rows.map(([label, value]) => `
+    <div class="terp-row">
+      <span>${label}</span>
+      <div class="terp-bar-track"><i class="terp-bar" style="--width:${(value / max) * 100}%"></i></div>
+      <strong>${value}</strong>
+    </div>`).join('');
+  terpReadout.textContent = view.note;
+}
+
+document.querySelectorAll('[data-terp-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-terp-view]').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    renderTerpView(button.dataset.terpView);
+  });
+});
+
+renderTerpView('opponents');
